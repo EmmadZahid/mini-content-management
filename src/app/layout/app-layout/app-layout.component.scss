@@ -1,0 +1,14 @@
+@import 'src/assets/styles/layout';
+
+:host{
+    margin-top: $headerHeight;
+    position: absolute;
+    width: 100%;
+}
+
+.app-container{
+    max-width: $appContainerWidth;
+    width: 100%;
+    margin: auto;
+    padding: 40px 15px 0px 15px;
+}

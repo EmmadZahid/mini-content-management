@@ -1,0 +1,32 @@
+@import 'src/assets/styles/layout';
+@import 'src/assets/styles/variables';
+
+:host{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+.header{
+    height: $headerHeight;
+    background: white;
+    width: 100%;
+    padding: 0px 15px;
+    display: flex;
+    justify-content: center;
+    .inner-header{
+        flex: 1 1 auto;
+        max-width: $appContainerWidth;
+        .menu-item{
+            text-decoration: none;
+            margin-right: 15px;
+            color: $dull;
+            &:last-child{
+                margin-right: 0px;
+            }
+            &.active{
+                color: $primary-color;
+            }
+        }
+    }
+}
