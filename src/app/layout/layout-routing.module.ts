@@ -5,16 +5,16 @@ import { AppLayoutComponent } from './app-layout/app-layout.component';
 
 const routes: Routes = [
   {
-    path:'pages',
+    path:'',
     component: AppLayoutComponent,
     children:[
       {
         path: 'blog',
         loadChildren: () => import('../blogs/blogs.module').then(m => m.BlogsModule)
-      }
+      },
+      {path: '', redirectTo: 'blog',  pathMatch: 'full'}
     ]
-  },
-  {path: 'pages', redirectTo: 'pages/blog',  pathMatch: 'full'}
+  }
 ];
 
 @NgModule({

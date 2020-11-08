@@ -32,15 +32,6 @@ export class BlogService {
         return of({id: id, msg:"New blog created"})
     }
 
-    getRandomImageForBlog(){
-        return this.http.get('https://picsum.photos/200/200', {responseType: 'blob', observe: 'response'}).pipe(
-            map((response:HttpResponse<any>)=>{
-                let imageId:string = response.headers.get("picsum-id")
-                return {id: imageId, imageUrl: response.url}
-            })
-        )
-    }
-
     getBlogById(blogId:string):Observable<Blog>{
         return of(this.blogsList.find(item => item.id == blogId))
     }

@@ -1,20 +1,20 @@
 import { Component, HostListener, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { BlogDataSource } from '../blog-data-source';
+import { BlogListDataSource } from '../blog-list-data-source';
 import { Blog } from '../models/blog';
 
 @Component({
   selector: 'app-blog-list',
   templateUrl: './blog-list.component.html',
   styleUrls: ['./blog-list.component.scss'],
-  providers: [BlogDataSource]
+  providers: [BlogListDataSource]
 })
 export class BlogListComponent implements OnInit, OnDestroy, OnChanges {
   blogs: Blog[] = []
   private destroy$: Subject<void> = new Subject<void>()
 
-  constructor(private blogdataSource: BlogDataSource) { }
+  constructor(private blogListDataSource: BlogListDataSource) { }
 
   @HostListener("window:scroll", ["$event"])
   onWindowScroll() {
@@ -23,7 +23,7 @@ export class BlogListComponent implements OnInit, OnDestroy, OnChanges {
     let max = document.documentElement.scrollHeight;
     // pos/max will give you the distance between scroll bottom and and bottom of screen in percentage.
     if (pos >= (max - 50)) {
-      if(!this.blogdataSource.isLoading){
+      if(!this.blogListDataSource.isLoading){
         this.getBlogsPage()
       }
     }
@@ -38,7 +38,7 @@ export class BlogListComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   getBlogsPage() {
-    this.blogdataSource.getBlogsPage()
+    this.blogListDataSource.getBlogsPage()
       .pipe(takeUntil(this.destroy$))
       .subscribe((blogs: boolean | Blog[]) => {
         if(blogs == false){

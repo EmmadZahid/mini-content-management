@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
-import { BlogsMainComponent } from './blogs-main/blogs-main.component';
+import { BlogListComponent } from './blog-list/blog-list.component';
 
 const routes: Routes = [
   {
     path: 'list',
-    component: BlogsMainComponent
+    component: BlogListComponent
   },
   {
     path: 'create',

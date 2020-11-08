@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { PicsumService } from './picsum.service';
+import { PicsumService } from './services/picsum.service';
 import { AppValidators } from './validators/app-validators.service';
 @NgModule({
   declarations: [

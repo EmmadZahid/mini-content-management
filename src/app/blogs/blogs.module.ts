@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 
-import { BlogsMainComponent } from './blogs-main/blogs-main.component';
 import { BlogsRoutingModule } from './blogs-routing.module';
 import { CommonModule } from '@angular/common';
 import { BlogService } from './blog.service';
@@ -12,7 +11,6 @@ import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
-    BlogsMainComponent,
     BlogListComponent,
     BlogListItemComponent,
     BlogDetailComponent 

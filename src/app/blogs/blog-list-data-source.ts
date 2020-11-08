@@ -2,7 +2,7 @@ import { Observable, of } from 'rxjs'
 import { tap } from 'rxjs/operators'
 import { Blog } from './models/blog'
 
-export class BlogDataSource{
+export class BlogListDataSource{
     blogsList:Blog[] = []
     pageSize:number = 2
     pageNum:number = 0

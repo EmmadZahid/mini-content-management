@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PicsumService } from 'src/app/shared/picsum.service';
+import { PicsumService } from 'src/app/shared/services/picsum.service';
 import { BlogService } from '../blog.service';
 import { Blog } from '../models/blog';
 

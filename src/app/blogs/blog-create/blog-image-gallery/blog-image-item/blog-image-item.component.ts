@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { BlogService } from 'src/app/blogs/blog.service';
-import { PicsumService } from 'src/app/shared/picsum.service';
+import { PicsumService } from 'src/app/shared/services/picsum.service';
 @Component({
   selector: 'app-blog-image-item',
   templateUrl: './blog-image-item.component.html',
