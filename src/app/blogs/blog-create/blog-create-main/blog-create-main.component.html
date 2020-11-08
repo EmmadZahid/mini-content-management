@@ -1,1 +1,31 @@
-<p>blog-create-main works!</p>
+<h2>Create a Blog</h2>
+<form [formGroup]="form" class="d-flex flex-column">
+    <mat-form-field class="align-items-stretch" appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title">
+        <mat-error *ngIf="form.get('title').hasError('required')">
+            This is required.
+        </mat-error>
+        <mat-error *ngIf="form.get('title').hasError('emptyField')">
+            The field cannot be empty
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="align-items-stretch" appearance="outline">
+        <mat-label>Content</mat-label>
+        <textarea matInput formControlName="content" rows="10"></textarea>
+        <mat-error *ngIf="form.get('content').hasError('required')">
+            This is required.
+        </mat-error>
+        <mat-error *ngIf="form.get('content').hasError('emptyField')">
+            The field cannot be empty
+        </mat-error>
+    </mat-form-field>
+    <app-blog-image-gallery #gallery (onSelection)="onImageSelection($event)"></app-blog-image-gallery>
+    <p></p>
+    <div class="d-flex flex-row justify-content-end">
+        <button mat-flat-button class="flex-grow-1 flex-md-grow-0" color="primary" (click)="onBlogSave()" [disabled]="!form.valid || imageUrl.length == 0 || disableSaveBtn">
+            <mat-icon>save</mat-icon>
+            <span>Save</span>
+        </button>
+    </div>
+</form>

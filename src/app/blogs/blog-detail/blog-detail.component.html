@@ -1,0 +1,9 @@
+<img [src]="imageUrl" alt="">
+<div class="inner-detail d-flex flex-column">
+    <h2>{{blog?.title}}</h2>
+    <p class="content">{{blog?.content}}</p>
+    <button mat-button color="primary" (click)="goBack()" class="flex-grow-0">
+        <mat-icon class="mr-2">arrow_back</mat-icon>
+        <span>Back</span>
+    </button>
+</div>

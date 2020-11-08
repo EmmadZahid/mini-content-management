@@ -1,0 +1,8 @@
+<div *ngIf="blogs.length == 0" class="d-flex justify-content-center flex-grow-1">
+    <p class="empty-msg">No blog available. <br class="d-sm-block"> Please create a blog</p>
+</div>
+
+<div *ngIf="blogs.length > 0"  class="d-flex flex-column blogs-list">
+    <h2>Blogs</h2>
+    <app-blog-list-item *ngFor="let blog of blogs" class="item" [blog]="blog"></app-blog-list-item>
+</div>

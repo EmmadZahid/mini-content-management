@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-layout',
@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppLayoutComponent implements OnInit {
 
   constructor() { }
+  @HostBinding('class') class = 'app-layout';
 
   ngOnInit(): void {
   }

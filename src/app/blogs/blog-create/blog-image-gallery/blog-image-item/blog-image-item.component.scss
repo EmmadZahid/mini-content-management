@@ -1,0 +1,16 @@
+@import "src/assets/styles/variables";
+
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    &.selected{
+        border: 2px solid $primary-color;
+        padding: 3px;
+        overflow: hidden;
+    }
+}
+
+:host{
+    margin: 5px;
+}

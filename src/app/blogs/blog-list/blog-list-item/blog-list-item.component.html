@@ -1,0 +1,7 @@
+<div class="d-flex flex-row item" routerLink="/pages/blog/detail/{{blog.id}}">
+    <img class="flex-grow-0 mr-3 blog-image" [src]="blog.imageUrl" alt="">
+    <div class="d-flex flex-grow-1 flex-column">
+        <div class="title">{{blog.title}}</div>
+        <div class="content">{{blog.content}}</div>
+    </div>
+</div>

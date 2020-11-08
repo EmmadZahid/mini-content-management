@@ -1,0 +1,12 @@
+@import 'src/assets/styles/variables';
+
+.empty-msg{
+    font-size: $f24;
+    text-align: center;
+    line-height: 30px;
+}
+.blogs-list{
+    >.item{
+        margin-bottom: 10px;
+    }
+}

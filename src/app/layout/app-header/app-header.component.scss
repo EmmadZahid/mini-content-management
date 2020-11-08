@@ -1,11 +1,14 @@
 @import 'src/assets/styles/layout';
 @import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
 
 :host{
     position: fixed;
     top: 0px;
     left: 0px;
     width: 100%;
+    z-index: 1;
+    @include box-shadow(0px, 10px, 20px, rgba(198,201,210,.25))
 }
 .header{
     height: $headerHeight;
